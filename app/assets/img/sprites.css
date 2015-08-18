@@ -1,0 +1,34 @@
+.BikeAccepted, .CarAccepted, .MotoAccepted, .VanAccepted, .WalkAccepted{
+	background: url(sprites.png) no-repeat;
+}
+
+.BikeAccepted{
+	background-position: -228px -25px ;
+	width: 48px;
+	height: 59px;
+}
+
+.CarAccepted{
+	background-position: -177px -24px ;
+	width: 48px;
+	height: 59px;
+}
+
+.MotoAccepted{
+	background-position: -121px -25px ;
+	width: 48px;
+	height: 59px;
+}
+
+.VanAccepted{
+	background-position: -73px -25px ;
+	width: 48px;
+	height: 59px;
+}
+
+.WalkAccepted{
+	background-position: -23px -24px ;
+	width: 48px;
+	height: 59px;
+}
+

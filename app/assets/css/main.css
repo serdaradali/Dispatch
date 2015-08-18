@@ -1,0 +1,346 @@
+body {
+    margin:0;
+    padding:0;
+    font-family:sans-serif;
+}
+.leaflet-zoom-anim .couriericon {
+    transition:all 0s;
+}
+
+.fill {
+    height: 100%;
+}
+
+#map {
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:275px;
+    left:0px;
+    cursor:cell;
+}
+#sidebar {
+    width:275px;
+    border-left:1px solid #aaa;
+    right:0;
+    top:0;
+    bottom:0;
+    position:absolute;
+    text-align:center;
+    overflow:scroll
+}
+#sound {
+    bottom:0;
+    right:0;
+    position:absolute;
+    width:275px
+}
+.metriclabel {
+    text-transform: uppercase;
+    color:#fff;
+    opacity:0.75;
+    font-weight:bold;
+}
+
+.metric {
+    margin:0px;
+    font-size:5em;
+    font-weight:bold;
+    color:#fff;
+    opacity:0.3;
+}
+path {
+    stroke-dashoffset: 10000;
+    stroke-dasharray:10000;
+    -webkit-transition:stroke-dashoffset 6s ease-in
+}
+
+.city_dropdown {
+    position: absolute;
+    top: 2%;
+    left: 3%;
+    z-index: 777;
+}
+
+.couriericon {
+    transition:all 0.25s linear;
+    width:15px;
+    height:15px;
+    border-radius:10px;
+    color:rgba(255,255,255,0.75);
+    text-align:center;
+    line-height:1.6em;
+    font-size:0.8em;
+    font-weight:bold;
+    z-index:999;
+}
+.couriericon.Blue{
+    background:#456E75;
+}
+.couriericon.Green{
+    background:#8F9957;
+}
+.couriericon.Orange{
+    background:#B87C51;
+}
+.couriericon.Red{
+    background:#B04548;
+}
+.couriericon.Purple{
+    background:#5C2E58;
+}
+.hq {
+    width:20px;
+    border-radius:50%;
+    box-shadow: 0 0px 6px rgba(0,0,0,.25);
+}
+.couriertarget {
+    z-index:1;
+}
+svg path.leaflet-clickable {
+    stroke-width:3px;
+    stroke-opacity:0.7;
+}
+.leaflet-popup-content-wrapper {
+    background:#fff;
+    color:#666;
+    opacity:0.9;
+    box-shadow: 0 1px 2px rgba(0,0,0,.25);
+}
+.leaflet-popup-content {
+    padding:0px 5px;
+    font-weight:bold
+}
+.leaflet-popup-tip {
+    border-top: 5px solid #fff;
+    opacity:1;
+}
+
+.leaflet-fade-anim .leaflet-popup,
+.leaflet-fade-anim .leaflet-tile{
+    -webkit-transition:none;
+}
+
+.ticker {
+    overflow:scroll;
+    border-top:1px solid rgba(255,255,255,0.25);
+
+}
+.ticker div{
+    padding:0px 15px;
+    color:#828a8e;
+    max-height:0px;
+    overflow:hidden;
+    transition:all 0.5s ease-in;
+    opacity:0;
+}
+
+.ticker div.expanded {
+    max-height:200px;
+    padding:10px 15px;
+    border-bottom:1px solid rgba(255,255,255,0.25);
+    opacity:1
+}
+
+.ticker div strong {
+    color:white;
+    border-radius:2px
+}
+
+.ticker div .incoming {
+    color:#222B30;
+    background:#828a8e;
+}
+
+.strongpad {
+    padding:0px 4px;
+    margin-right:2px;
+}
+@media (max-width: 1000px) {
+    .metric {
+        font-size:4em;
+    }
+}
+@media (max-width: 600px) {
+    #sidebar {
+        display:none;
+    }
+    #map {
+        width:100%
+    }
+}
+@media (max-height: 700px) {
+    .blurb {
+        display:none
+    }
+}
+
+.driverIconBikeDelivering, .driverIconBikeOnDuty, .driverIconBikeOffDuty, .driverIconBikePicking, .driverIconCarDelivering,
+.driverIconCarOnDuty, .driverIconCarOffDuty, .driverIconCarPicking, .driverIconMotoDelivering, .driverIconMotoOnDuty,
+.driverIconMotoOffDuty, .driverIconMotoPicking, .driverIconVanDelivering, .driverIconVanOnDuty, .driverIconVanOffDuty,
+.driverIconVanPicking, .driverIconWalkDelivering, .driverIconWalkOnDuty, .driverIconWalkOffDuty, .driverIconWalkPicking
+{ display: inline-block; background: url('../img/driverIcons.png') no-repeat; overflow: hidden; text-indent: -9999px; text-align: left;}
+
+
+
+.driverIconBikeDelivering { background-position: -2px -0px; width: 51px; height: 55px; }
+.driverIconBikeOnDuty { background-position: -55px -0px; width: 51px; height: 55px; }
+.driverIconBikeOffDuty { background-position: -108px -0px; width: 51px; height: 55px;}
+.driverIconBikePicking { background-position: -161px -0px; width: 51px; height: 55px; }
+.driverIconCarDelivering { background-position: -2px -57px; width: 51px; height: 55px; }
+.driverIconCarOnDuty { background-position: -55px -57px; width: 51px; height: 55px; }
+.driverIconCarOffDuty { background-position: -108px -57px; width: 51px; height: 55px; }
+.driverIconCarPicking { background-position: -161px -57px; width: 51px; height: 55px; }
+.driverIconMotoDelivering { background-position: -2px -114px; width: 51px; height: 55px; }
+.driverIconMotoOnDuty { background-position: -55px -114px; width: 51px; height: 55px; }
+.driverIconMotoOffDuty { background-position: -108px -114px; width: 51px; height: 55px; }
+.driverIconMotoPicking { background-position: -161px -114px; width: 51px; height: 55px; }
+.driverIconVanDelivering { background-position: -2px -171px; width: 51px; height: 55px; }
+.driverIconVanOnDuty { background-position: -55px -171px; width: 51px; height: 55px; }
+.driverIconVanOffDuty { background-position: -108px -171px; width: 51px; height: 55px; }
+.driverIconVanPicking { background-position: -161px -171px; width: 51px; height: 55px; }
+.driverIconWalkDelivering { background-position: -2px -228px; width: 51px; height: 55px; }
+.driverIconWalkOnDuty { background-position: -55px -228px; width: 51px; height: 55px; }
+.driverIconWalkOffDuty { background-position: -108px -228px; width: 51px; height: 55px; }
+.driverIconWalkPicking { background-position: -161px -228px; width: 51px; height: 55px; }
+
+
+.driverIconBikeDeliveringS, .driverIconBikeOnDutyS, .driverIconBikeOffDutyS, .driverIconBikePickingS, .driverIconCarDeliveringS,
+.driverIconCarOnDutyS, .driverIconCarOffDutyS, .driverIconCarPickingS, .driverIconMotoDeliveringS, .driverIconMotoOnDutyS,
+.driverIconMotoOffDutyS, .driverIconMotoPickingS, .driverIconVanDeliveringS, .driverIconVanOnDutyS, .driverIconVanOffDutyS,
+.driverIconVanPickingS, .driverIconWalkDeliveringS, .driverIconWalkOnDutyS, .driverIconWalkOffDutyS, .driverIconWalkPickingS {
+    background-image: url(../img/driverIconsS.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.driverIconBikeDeliveringS {
+    width: 26px;
+    height: 28px;
+    background-position: -5px -5px;
+}
+
+.driverIconBikeOffDutyS {
+    width: 26px;
+    height: 28px;
+    background-position: -41px -5px;
+}
+
+.driverIconBikeOnDutyS {
+    width: 26px;
+    height: 28px;
+    background-position: -77px -5px;
+}
+
+.driverIconBikePickingS {
+    width: 26px;
+    height: 28px;
+    background-position: -113px -5px;
+}
+
+.driverIconCarDeliveringS {
+    width: 26px;
+    height: 28px;
+    background-position: -5px -43px;
+}
+
+.driverIconCarOffDutyS {
+    width: 26px;
+    height: 28px;
+    background-position: -41px -43px;
+}
+
+.driverIconCarOnDutyS {
+    width: 26px;
+    height: 28px;
+    background-position: -77px -43px;
+}
+
+.driverIconCarPickingS {
+    width: 26px;
+    height: 28px;
+    background-position: -113px -43px;
+}
+
+.driverIconMotoDeliveringS {
+    width: 26px;
+    height: 28px;
+    background-position: -5px -81px;
+}
+
+.driverIconMotoOffDutyS {
+    width: 26px;
+    height: 28px;
+    background-position: -41px -81px;
+}
+
+.driverIconMotoOnDutyS {
+    width: 26px;
+    height: 28px;
+    background-position: -77px -81px;
+}
+
+.driverIconMotoPickingS {
+    width: 26px;
+    height: 28px;
+    background-position: -113px -81px;
+}
+
+.driverIconVanDeliveringS {
+    width: 26px;
+    height: 28px;
+    background-position: -5px -119px;
+}
+
+.driverIconVanOffDutyS {
+    width: 26px;
+    height: 28px;
+    background-position: -41px -119px;
+}
+
+.driverIconVanOnDutyS {
+    width: 26px;
+    height: 28px;
+    background-position: -77px -119px;
+}
+
+.driverIconVanPickingS {
+    width: 26px;
+    height: 28px;
+    background-position: -113px -119px;
+}
+
+.driverIconWalkDeliveringS {
+    width: 26px;
+    height: 28px;
+    background-position: -149px -5px;
+}
+
+.driverIconWalkOffDutyS {
+    width: 26px;
+    height: 28px;
+    background-position: -149px -43px;
+}
+
+.driverIconWalkOnDutyS {
+    width: 26px;
+    height: 28px;
+    background-position: -149px -81px;
+}
+
+.driverIconWalkPickingS {
+    width: 26px;
+    height: 28px;
+    background-position: -149px -119px;
+}
+
+.invitation {
+    background: url('../img/InvitationAccepted.png');
+    background-repeat: no-repeat;
+    display: block;
+}
+
+a.fa.fa-search-plus {
+    text-align: center;
+    line-height: 26px;
+}
